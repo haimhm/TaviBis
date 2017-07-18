@@ -1,0 +1,39 @@
+<template name="UserProfile">
+    <div id="user-profile-container" style="direction:rtl;margin-right:20px">
+        <form id="user-profile-form">
+            {{#if profile}}
+                <div class="form-group">
+                    <label for="profileName">שם עובד</label>
+                    <input type="text" class="form-control" id="profileName" value={{profile.employeeName}}>
+                </div>
+                <div class="form-group">
+                    <label for="employeeId">מספר עובד</label>
+                    <input type="number" class="form-control" id="employeeId" value={{profile.employeeId}}>
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">מייל</label>
+                    <input type="text" class="form-control" id="emailAddress" value={{profile.emailAddress}}>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-default" id="updateProfile">עדכן</button>
+            {{else}}
+                <div class="form-group">
+                    <label for="profileName">שם עובד</label>
+                    <input type="text" class="form-control" id="profileName" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="employeeId">מספר עובד</label>
+                    <input type="number" class="form-control" id="employeeId" placeholder="EmployeeId">
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">מייל</label>
+                    <input type="text" class="form-control" id="emailAddress" placeholder="EmailAddress">
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-default" id="saveProfile">שמור</button>
+            {{/if}}
+        </form>
+    </div>
+</template>

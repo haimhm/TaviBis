@@ -1,0 +1,50 @@
+<template name="AddDish">
+    <div id="add-dish-container" style="direction:rtl;">
+        <form id="add-dish-form" style="margin-right: 20%;">
+            <div class="form-group">
+                <label for="dishName">שם המנה</label>
+                <input type="text" class="form-control" id="dishName" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="dishDescription">תיאור</label>
+                <textarea  rows="3" class="form-control" id="dishDescription" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dueDue">תאריך אספקה</label>
+                <input type="text" class="form-control datepicker-cls" id="dueDate" placeholder="Due Date">
+            </div>
+            <div class="form-group">
+                <label for="price">מחיר</label><br>
+                <select class="form-control" id="priceOptions">
+                    <option value="free">בעל הבית השתגע</option>
+                    <option value="20">20</option>
+                    <option value="35">35</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dishAmount">כמות</label>
+                <input type="number" class="form-control" id="dishAmount" placeholder="Amount" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">תגיות</label><br>
+                <select multiple id="labelsOptions" class="for-chosen">
+                    <option value="צמחוני">צמחוני</option>
+                    <option value="כשר">כשר</option>
+                    <option value="חריף">חריף</option>
+                    <option value="איטלקי">איטלקי</option>
+                    <option value="אסיאתי">אסיאתי</option>
+                    <option value="טבעוני">טבעוני</option>
+                    <option value="דל קלוריות">דל קלוריות</option>
+                    <option value="בשרי">בשרי</option>
+                    <option value="חלבי">חלבי</option>
+                    <option value="אמא הכינה">אמא הכינה</option>
+                    <option value="אבא הכין">אבא הכין</option>
+                </select>
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-default">הוסף מנה</button>
+        </form>
+    </div>
+</template>

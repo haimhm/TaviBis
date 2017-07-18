@@ -1,0 +1,38 @@
+<template name="LaMirpesetAdmin">
+    <div id="la-mirpeset-admin-container" style="direction:rtl;margin-right:15px;">
+        <form id="la-mirpeset-admin-form">
+            <div class="form-group">
+                <label for="restaurants">מסעדות</label>
+                <select id="lmRestaurants" class="form-control">
+                    <option value="None"></option>
+                    {{#each lm_restaurants}}
+                        <option value={{_id}}>{{name}}</option>
+                    {{/each}}
+                </select>
+                <br>
+                <input type="text" class="form-control" id="NewRestaurant" placeholder="שם מסעדה">
+                <br>
+                <button id="submitNewRestaurant" class="btn btn-default" style="margin-left:10px">הוסף מסעדה</button>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="restaurant">סטטוס</label>
+                    <select class="form-control" id="restStatus">
+                        <option value="none"></option>
+                        <option value="open">פתוח</option>
+                        <option value="close">סגור</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="restaurant">תאריך הבא להזמנה</label>
+                    <input type="text" class="form-control" id="nextOrder" value={{open_date}}>
+                </div>
+                {{#if lm_restaurant}}
+                    <div class="form-group">
+                        <button id="updateRestaurant" class="btn btn-default" style="margin-left:10px">עדכון</button>
+                    </div>
+                {{/if}}
+            </div>
+        </form>
+    </div>
+</template>

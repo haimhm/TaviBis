@@ -1,0 +1,77 @@
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <title>תביא ביס!</title>
+</head>
+
+
+<template name="mainTemplate">
+
+    {{> loginButtons}}
+
+    {{#if currentUser}}
+
+        <div style="border: 0px solid black;margin-left: 35%;">
+            <img src="slogo.png" style="height:180px"/>
+        </div>
+
+        <br>
+
+        <div style="display: inline-block ;vertical-align: middle;text-align: center; background-color: white; border: solid 4px rgba(168, 212, 125, 1); width: 150px; height:40px; margin-left: 2%">
+            <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" href="open_dishes_par">בא לי היום</a>
+        </div>
+
+        <div style="display: inline-block ;vertical-align: middle;text-align: center; background-color: white; border: solid 4px rgba(168, 212, 125, 1); width: 150px; height:40px; margin-left: 2%">
+            <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" href="future_dish_par">הזמנות פעילות</a>
+        </div>
+
+        <div style="display: inline-block ;vertical-align: middle;text-align: center; background-color: white; border: solid 4px rgba(168, 212, 125, 1); width: 150px; height:40px; margin-left: 2%">
+            <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" href="history_dishes">היסטורית הזמנות</a>
+        </div>
+
+        <div style="display: inline-block ;vertical-align: middle;text-align: center; background-color: white; border: solid 4px rgba(168, 212, 125, 1); width: 150px; height:40px; margin-left: 2%">
+            <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" href="add_dish_par">רוצה לחלוק</a>
+        </div>
+
+        <div style="display: inline-block ;vertical-align: middle;text-align: center; background-color: white; border: solid 4px rgba(168, 212, 125, 1); width: 150px; height:40px; margin-left: 2%">
+            <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" href="best_chefs_par">השפים הגדולים</a>
+        </div>
+
+        <div class="dropdown dropbtn" style="display: inline-block ;vertical-align: middle;text-align: center; background-color: white; border: solid 4px rgba(168, 212, 125, 1); width: 150px; height:40px; margin-left: 2%">
+            <span style="font-family: gisha;position: relative;top:-11px;text-decoration: none;color: #68391A;" href="open_dishes_par">לה מרפסת</span>
+            <div class="dropdown-content" style="min-width:150px;position: relative;left: -20px;">
+                <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" href="la_mirpeset_orders_par">הזמנה חדשה</a>
+                <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" href="la_mirpeset_report_par">דו"ח אישי</a>
+
+                {{#if is_lm_admin}}
+                    <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" href="la_mirpeset_admin_par">ניהול מסעדות</a>
+                    <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" href="la_mirpeset_dish_par">ניהול מנות</a>
+                {{/if}}
+            </div>
+        </div>
+
+        <div style="display: inline-block ;vertical-align: middle;text-align: center; background-color: white; border: solid 4px rgba(168, 212, 125, 1); width: 150px; height:40px; margin-left: 2%">
+            <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" href="user_profile_par">פרופיל אישי</a>
+        </div>
+
+        {{#if is_koi_slave}}
+            <div style="display: inline-block ;cursor:pointer;vertical-align: middle;text-align: center; background-color: white; border: solid 4px rgba(168, 212, 125, 1); width: 150px; height:40px; margin-left: 2%">
+                <a style="font-family: gisha;position: relative;top:5px;text-decoration: none;color: #68391A;" id="koi_begging">מי פנוי לקוי</a>
+            </div>
+
+            <br>
+        {{/if}}
+
+        <br>
+
+        {{> Template.dynamic template=main}}
+
+    {{ else }}
+        <div style="width:800px;margin:auto">
+            <video width="800" height="600" controls>
+                <source src="TaviBisVideo.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    {{/if}}
+</template>
+

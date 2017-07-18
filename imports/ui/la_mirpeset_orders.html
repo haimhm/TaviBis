@@ -1,0 +1,28 @@
+<template name="LaMirpesetOrders">
+    <div id="la-mirpeset-orders-container" style="direction:rtl;margin-right:20px;">
+        <form id="lm-new-orders-form">
+            <div class="form-group">
+                <label for="restaurants">מסעדה</label>
+                <select class="form-control" id="lmRestaurants">
+                    <option value="None"></option>
+                    {{#each lm_restaurants}}
+                        <option value={{_id}}>{{name}} - {{formatDate next_order_date}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="lmDishes">מנות</label>
+                <ul>
+                    {{#each lm_dishes}}
+                        <div style="padding-right:10px;" class="dish-container" id={{_id}}>
+                            <h1>{{ name }}</h1>
+                            <div>{{ desc }}</div>
+                            <div>מחיר: {{ price }}</div>
+                            <div>מחיר פיינל: {{ final_price }}</div>
+                        </div>
+                    {{/each}}
+                </ul>
+            </div>
+        </form>
+    </div>
+</template>

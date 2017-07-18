@@ -1,0 +1,76 @@
+<template name="HistoryDish">
+    <div style="direction: rtl;margin-right:30px;">
+        <h1 style="display: block;"><label style="font-size:20px;margin: 10px">הזמנות קודמות</label></h1>
+        {{#each old_meals}}
+            {{> OldDishOrdered }}
+        {{/each}}
+        <br>
+        <div class="clearfix"></div>
+        <h1 style="display: block;"><label style="font-size:20px;margin: 10px">אספקות קודמות</label></h1>
+        {{#each old_supplies}}
+            {{> OldDishSupply }}
+        {{/each}}
+    </div>
+</template>
+
+<template name="OldDishOrdered">
+    <div class="dish-container">
+        <div>
+            <h1>שם מנה: {{ name }}</h1>
+        </div>
+        <div>
+            <h1>תאריך אספקה: </h1> {{ formatDate  due_date }}
+        </div>
+        <div>
+            <h1>תיאור: </h1> {{ description }}
+        </div>
+        <div>
+            <h1>שף: </h1> {{ cooker owner}}
+        </div>
+        <div>
+            <h1>מחיר: </h1> {{ price }}
+        </div>
+        <div>
+            {{#each tags}}
+                <span class="label label-info tag-cls"> {{ this }} </span>
+            {{/each}}
+        </div>
+        {{#unless ranked}}
+            <div>
+                <h1>דרג: </h1>
+                <img class="rank rank-awesome" src="awesome.png" width="32px" height="32px" title="מדהים"/>
+                <img class="rank rank-tasty" src="tasty.png" width="32px" height="32px" title="טעים"/>
+                <img class="rank rank-nice" src="nice.png" width="32px" height="32px" title="נעים"/>
+            </div>
+        {{/unless}}
+
+    </div>
+</template>
+
+<template name="OldDishSupply">
+    <div class="dish-container">
+        <div>
+            <h1>שם מנה: {{ name }}</h1>
+        </div>
+        <div>
+            <h1>תאריך אספקה: </h1> {{ formatDate  due_date }}
+        </div>
+        <div>
+            <h1>תיאור: </h1> {{ description }}
+        </div>
+        <div>
+            <h1>כמות: </h1> {{ amount }}
+        </div>
+        <div>
+            <h1>כמות שנשארה: </h1> {{ unorder_amount }}
+        </div>
+        <div>
+            <h1>מחיר: </h1> {{ price }}
+        </div>
+        <div>
+            {{#each tags}}
+                <span class="label label-info tag-cls"> {{ this }} </span>
+            {{/each}}
+        </div>
+    </div>
+</template>

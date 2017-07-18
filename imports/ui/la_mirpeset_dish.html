@@ -1,0 +1,32 @@
+<template name="LaMirpesetDish">
+    <div id="la-mirpeset-dish-container" style="direction: rtl;margin-right:15px;">
+        <form id="la-mirpeset-dish-form">
+            <div class="form-group">
+                <label for="restaurants">מסעדה</label>
+                <select class="form-control" id="lmRestaurants">
+                    <option value="None"></option>
+                    {{#each lm_restaurants}}
+                        <option value={{_id}}>{{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            {{#if lm_restaurant}}
+                <div class="form-group">
+                    <input type="text" class="form-control" id="dishName" placeholder="שם מנה">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="dishDesc" placeholder="תיאור">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="dishPrice" placeholder="מחיר">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="dishFinalPrice" placeholder="מחיר פיינל">
+                </div>
+                <div class="form-group">
+                    <button id="addDish" class="btn btn-default" style="margin-left:10px">הוסף מנה</button>
+                </div>
+            {{/if}}
+        </form>
+    </div>
+</template>

@@ -1,0 +1,72 @@
+<template name="FutureDish">
+    <div style="direction: rtl;margin-right:30px;">
+        <h1 style="margin-left: 25px;margin-top:15px"><label style="font-size:20px;">ארוחות קרובות</label></h1>
+        <br>
+        {{#each future_meals}}
+            {{> DishOrdered }}
+        {{/each}}
+        <br>
+        <div class="clearfix"></div>
+        <h1 style="margin-left: 25px;margin-top:15px"><label style="font-size:20px;">אספקות קרובות</label></h1>
+        <br>
+        {{#each future_supplies}}
+            {{> DishSupply }}
+        {{/each}}
+    </div>
+
+</template>
+
+<template name="DishOrdered">
+    <div class="dish-container">
+        <div>
+            <h1>שם מנה: {{ name }}</h1>
+        </div>
+        <div>
+            <h1>תאריך אספקה: </h1> {{ formatDate  due_date }}
+        </div>
+        <div>
+            <h1>תיאור: </h1> {{ description }}
+        </div>
+        <div>
+            <h1>שף: </h1> {{ cooker owner}}
+        </div>
+        <div>
+            <h1>מחיר: </h1> {{ price }}
+        </div>
+        <div>
+            {{#each tags}}
+                <span class="label label-info tag-cls"> {{ this }} </span>
+            {{/each}}
+        </div>
+    </div>
+</template>
+
+<template name="DishSupply">
+    <div class="dish-container">
+        <div>
+            <h1>שם מנה: {{ name }}</h1>
+        </div>
+        <div>
+            <h1>תאריך אספקה: </h1> {{ formatDate  due_date }}
+        </div>
+        <div>
+            <h1>תיאור: </h1> {{ description }}
+        </div>
+        <div>
+            <h1>כמות: </h1> {{ amount }}
+        </div>
+
+        <div>
+            <h1>כמות פנויה: </h1> {{ unorder_amount }}
+        </div>
+
+        <div>
+            <h1>מחיר: </h1> {{ price }}
+        </div>
+        <div>
+            {{#each tags}}
+                <span class="label label-info tag-cls"> {{ this }} </span>
+            {{/each}}
+        </div>
+    </div>
+</template>

@@ -1,0 +1,20 @@
+<template name="LaMirpesetReport">
+    <div id="la-mirpeset-report-container">
+        <form id="lm-user-reports-form">
+            <div class="form-group" style="direction: rtl;margin-right:15px">
+                <label for="username">דוח עבור {{user_name}}</label>
+            </div>
+            <ul>
+                {{#each lm_orders}}
+                    <div style="padding-right:10px;" class="dish-container" id={{_id}}>
+                        <h1>{{ formatDate delivery_date }}</h1>
+                        <h1>{{ name }}</h1>
+                        <div>{{ desc }}</div>
+                        <div>מחיר: {{ price }}</div>
+                        <div>מחיר פיינל: {{ final_price }}</div>
+                    </div>
+                {{/each}}
+            </ul>
+        </form>
+    </div>
+</template>

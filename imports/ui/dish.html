@@ -1,0 +1,37 @@
+<template name="Dish">
+    <div class="dish-container">
+        <div class="dish-labels" style="margin-right:15px;">
+            {{#if already_ordered}}
+                <h4><span class="label label-warning">מוזמן</span></h4>
+            {{/if}}
+            {{#if unorder_amount }}
+                {{#unless already_ordered}}
+                    <button id="order-dish" class="btn btn-success" style="font-size:13px;padding:3px 6px;"><span style="font-weight: bold">הזמן</span></button>
+                {{/unless}}
+            {{ else }}
+                <h4><span class="label label-danger">אזל</span></h4>
+            {{/if}}
+        </div>
+        <div>
+            <h1>שם מנה: {{ name }}</h1>
+        </div>
+        <div>
+            <h1>תאריך אספקה: </h1> {{ formatDate  due_date }}
+        </div>
+        <div>
+            <h1>שף: </h1> {{ cooker }}
+        </div>
+
+        <div>
+            <h1>תיאור: </h1> {{ description }}
+        </div>
+
+        <h1>מחיר: {{ price }}</h1>
+        <br>
+        <div>
+            {{#each tags}}
+                <span class="label label-info tag-cls"> {{ this }} </span>
+            {{/each}}
+        </div>
+    </div>
+</template>
